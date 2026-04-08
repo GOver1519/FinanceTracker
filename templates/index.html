@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>Welcome to the Finance tracker</h2>
+        <p class="lead">Track your daily expenses, understand your spending habits, and manage your finances efficiently with simple visual insights.</p>
+        <a href="{{ url_for('expenses') }}" class="btn btn-lg btn-start-tracking">Start Tracking Your Finance</a>
+    </div>
+
+    <section class="mt-5">
+        <h3 class="text-center mb-4">Key Finance Features</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Expense Breakdown</h5>
+                        <p class="card-text">Categorize and review your spending by type so you can pinpoint areas for savings and plan smarter budgets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Budget Alerts</h5>
+                        <p class="card-text">Set monthly targets and receive warnings before you overshoot your spending limits.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Savings Goals</h5>
+                        <p class="card-text">Track your progress toward financial goals with clear visual guidance and milestone checks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Monthly Reports</h5>
+                        <p class="card-text">Review trends over time and compare income vs expenditure to stay on top of your financial health.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Secure History</h5>
+                        <p class="card-text">All your transactions are stored safely so you can review and audit past months in one place.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Visual Dashboards</h5>
+                        <p class="card-text">Use charts and graphs to quickly understand where your money is going and make decisions confidently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

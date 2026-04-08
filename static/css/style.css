@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+}
+
+.full-width-bar {
+    background: linear-gradient(135deg, #102b4f 0%, #19628e 45%, #2ba4c8 100%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.full-width-bar h1,
+.full-width-bar span,
+.full-width-bar .nav-link,
+.full-width-bar footer a {
+    color: #f8f9ff !important;
+}
+
+.full-width-bar .nav-link {
+    border-radius: 0.45rem;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.full-width-bar .nav-link.active,
+.full-width-bar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.full-width-bar footer a {
+    color: #e3eef9;
+    text-decoration: none;
+}
+
+.full-width-bar footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(231, 242, 251, 0.92), rgba(217, 232, 244, 0.94)), url("/static/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e7f2fb;
+    color: #11263e;
+    min-height: 100vh;
+}
+
+main.container {
+    background-color: rgba(248, 252, 255, 0.96);
+    border: 1px solid #d2e4f2;
+    border-radius: 0.8rem;
+    padding: 1.8rem;
+    box-shadow: 0 0.45rem 1.15rem rgba(18, 58, 93, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: fadeInUp 0.7s ease forwards;
+}
+
+main.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.65rem 1.45rem rgba(18, 58, 93, 0.18);
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.btn-primary {
+    background-color: #1a68a5;
+    border-color: #1a68a5;
+}
+
+.btn-primary:hover {
+    background-color: #145487;
+    border-color: #145487;
+}
+
+.btn-start-tracking {
+    background-color: #54b8e7;
+    color: #082a45;
+    border-color: #54b8e7;
+}
+
+.btn-start-tracking:hover,
+.btn-start-tracking:focus {
+    background-color: #3d99c8;
+    color: #071f34;
+    border-color: #3d99c8;
+}
+
+.form-control {
+    border: 1px solid #94b7d1;
+    box-shadow: none;
+    background-color: rgba(255,255,255,0.95);
+}
+
+.form-control:focus {
+    border-color: #19628e;
+    box-shadow: 0 0 0 0.2rem rgba(25, 98, 142, 0.22);
+}
+
+.form-label {
+    color: #174264;
+}
+
+.card {
+    border-radius: 0.75rem;
+    border: 1px solid #c7dce9;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: fadeInUp 0.7s ease forwards;
+    overflow: hidden;
+    background: rgba(255,255,255,0.96);
+}
+
+.feature-card {
+    background: linear-gradient(135deg, rgba(26,104,165,0.92), rgba(79,160,207,0.94));
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.25);
+}
+
+.feature-card .card-body {
+    background: transparent;
+}
+
+.feature-card-primary {
+    background: linear-gradient(135deg, #1a68a5 0%, #54b8e7 100%);
+}
+
+.feature-card-secondary {
+    background: linear-gradient(135deg, #2f79b1 0%, #8cc5ee 100%);
+}
+
+.feature-card h5 {
+    color: #ffffff;
+}
+
+.feature-card canvas {
+    background: rgba(255,255,255,0.08);
+    border-radius: 0.75rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.45rem 1.1rem rgba(18, 58, 93, 0.16);
+}
+
+h2, h3 {
+    color: #123d68;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.nav-pills .nav-link {
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-pills .nav-link:hover {
+    transform: translateY(-1px);
+    background-color: rgba(255, 255, 255, 0.24);
+    color: #ffffff !important;
+}
+
+.btn,
+.form-control,
+.card {
+    border-radius: 0.65rem;
+}
+
+#amountChart,
+#categoryChart {
+    width: 100% !important;
+    height: 320px !important;
+}

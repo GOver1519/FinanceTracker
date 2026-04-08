@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Your Finance Dashboard</h2>
+    <div id="charts" class="row gy-4">        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Amount Data</h5>
+                    <!-- Chart for amount data -->
+                    <canvas id="amountChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Category Data</h5>
+                    <!-- Chart for category data -->
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // convert data passed from Python lists into JSON arrays to be used in JavaScript
+        const dates = {{ dates|tojson }};
+        
+        const amountData = {{ amount_data|tojson }};
+        const categoryLabels = {{ category_labels|tojson }};
+        const categoryValues = {{ category_values|tojson }};
+        console.log("dates...",dates, amountData, categoryLabels, categoryValues )
+
+        //get the 2d drawing contexts for canvas elements where charts will be rendered
+        const amountCtx = document.getElementById('amountChart').getContext('2d');
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        
+        //create expenses chart
+        new Chart(amountCtx, {
+        type: 'line',   // 
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Amount',
+                data: amountData,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+                }]
+            }
+        });
+
+        //create category chart
+        new Chart(categoryCtx, {
+            type: 'pie',
+            data: {
+                labels: categoryLabels,
+                datasets: [{
+                    label: 'Category Distribution',
+                    data: categoryValues,
+                }]
+            }
+        });
+
+        
+    </script>
+{% endblock %}
